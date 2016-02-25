@@ -2,4 +2,4 @@
 
 ## v0.1
 1. Region model & migration
-2. Rake task unidom:region:china:import
+2. Rake task unidom:geo:china:import

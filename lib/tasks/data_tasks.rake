@@ -21,7 +21,7 @@ namespace :unidom do
         updated_count = 0
         created_count = 0
 
-        region_entities = ::Unidom::Region::China::Region.scheme_id_is(scheme_id).scheme_type_is(scheme_type).select('id, name, virtual, numeric_code, alphabetic_code, scheme_id, scheme_type, opened_at, closed_at, defunct, updated_at').to_a
+        region_entities = ::Unidom::Geo::China::Region.scheme_id_is(scheme_id).scheme_type_is(scheme_type).select('id, name, virtual, numeric_code, alphabetic_code, scheme_id, scheme_type, opened_at, closed_at, defunct, updated_at').to_a
 
         each_csv_row file_name do |region|
 
@@ -43,12 +43,12 @@ namespace :unidom do
               end
             else
               attributes[:numeric_code] = numeric_code
-              ::Unidom::Region::China::Region.create! attributes
+              ::Unidom::Geo::China::Region.create! attributes
               created_count += 1
             end
           else
             attributes[:numeric_code] = numeric_code
-            ::Unidom::Region::China::Region.create! attributes
+            ::Unidom::Geo::China::Region.create! attributes
             created_count += 1
           end
 
