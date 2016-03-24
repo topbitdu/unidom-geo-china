@@ -18,7 +18,8 @@ rake db:migrate
 
 ## Import Data
 ```shell
-bundle exec rake unidom:geo:china:import file=/china-region-data/NBS-county/20141031.csv from_date=2014-10-31 scheme_id= scheme_type=
+bundle exec rake unidom:geo:china:region:import file=/china-region-data/NBS-county/20141031.csv from_date=2014-10-31 scheme_id= scheme_type=
+bundle exec rake unidom:geo:china:town:import file=/china-region-data/NBS-town/20141031.csv from_date=2014-10-31 scheme_id= scheme_type=
 ```
 
 ## Call the Model

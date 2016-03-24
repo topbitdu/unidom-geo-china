@@ -31,6 +31,7 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
 
   belongs_to :scheme,    polymorphic: true
   has_many   :locations, class_name: 'Unidom::Geo::Location', as: :region
+  has_many   :towns,     class_name: 'Unidom::Geo::China::Town'
 
   scope :scheme_is,      ->(scheme) { scheme.present? ? where(scheme: scheme) : scheme_id_is.scheme_type_is }
   scope :scheme_id_is,   ->(scheme_id   = ::Unidom::Common::NULL_UUID) { where scheme_id:   scheme_id   }
