@@ -19,6 +19,7 @@ gem 'unidom-geo-china'
 ```shell
 rake db:migrate
 ```
+The migration versions start with 2001049156.
 
 ## Import Data
 ```shell

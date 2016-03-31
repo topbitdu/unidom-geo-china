@@ -10,3 +10,6 @@
 3. Renamed the unidom:geo:china:import Rake task to unidom:geo:china:region:import
 4. Implemented the unidom:geo:china:town:import Rake task
 5. Improved the Ruby Gem Specification to depend on unidom-common v0.5
+
+## v0.3
+1. Improved the Ruby Gem Specification to depend on unidom-common v0.7
