@@ -6,7 +6,7 @@
 
 ## v0.2
 1. Town model & migration
-2. Improved the Region model to add the #towns association
+2. Improve the Region model to add the #towns association
 3. Renamed the unidom:geo:china:import Rake task to unidom:geo:china:region:import
 4. Implemented the unidom:geo:china:town:import Rake task
 5. Improved the Ruby Gem Specification to depend on unidom-common v0.5
