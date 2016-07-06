@@ -3,12 +3,13 @@
 <head>
   <title>Unidom Geo China</title>
   <%= stylesheet_link_tag    'unidom/geo/china/application', media: 'all' %>
-  <%= javascript_include_tag 'unidom/geo/china/application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+
+<%= javascript_include_tag 'unidom/geo/china/application' %>
 
 </body>
 </html>
