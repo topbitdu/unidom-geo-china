@@ -25,24 +25,27 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
 
   self.table_name = 'unidom_china_regions'
 
-  validates :numeric_code,    numericality: { integer_only: true }
-  validates :alphabetic_code, allow_blank: true, length: { minimum: 2 }
-  validates :name,            presence:    true, length: { maximum: self.columns_hash['name'].limit }
+  include Unidom::Common::Concerns::ModelExtension
 
-  belongs_to :scheme,    polymorphic: true
-  has_many   :locations, class_name: 'Unidom::Geo::Location', as: :region
-  has_many   :towns,     class_name: 'Unidom::Geo::China::Town'
+  validates :numeric_code,    numericality: { integer_only: true }
+  validates :alphabetic_code, allow_blank:  true, length: { minimum: 2 }
+  validates :name,            presence:     true, length: { maximum: self.columns_hash['name'].limit }
+
+  belongs_to :scheme, polymorphic: true
+
+  has_many :locations, class_name: 'Unidom::Geo::Location', as:     :region
+  has_many :locatings, through:    :locations,              source: :locatings
+
+  has_many :towns, class_name: 'Unidom::Geo::China::Town'
 
   scope :scheme_is,      ->(scheme) { scheme.present? ? where(scheme: scheme) : scheme_id_is.scheme_type_is }
-  scope :scheme_id_is,   ->(scheme_id   = ::Unidom::Common::NULL_UUID) { where scheme_id:   scheme_id   }
-  scope :scheme_type_is, ->(scheme_type = ''                         ) { where scheme_type: scheme_type }
+  scope :scheme_id_is,   ->(scheme_id   = Unidom::Common::NULL_UUID) { where scheme_id:   scheme_id   }
+  scope :scheme_type_is, ->(scheme_type = ''                       ) { where scheme_type: scheme_type }
 
   scope :name_is,       ->(name)           { where name:    name    }
   scope :being_virtual, ->(virtual = true) { where virtual: virtual }
 
   scope :root_level, -> { numeric_code_ending_with '0000' }
-
-  include Unidom::Common::Concerns::ModelExtension
 
   def numeric_code_prefix
     numeric_code[0..1]

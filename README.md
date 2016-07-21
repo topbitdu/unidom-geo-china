@@ -31,4 +31,7 @@ bundle exec rake unidom:geo:china:town:import file=/china-region-data/NBS-town/2
 ```ruby
 Unidom::Geo::China::Region.root_level # All the 31 province-level regions including Beijing, Tianjin, etc.
 Unidom::Geo::China::Region.numeric_coded_as('120000').valid_at.alive.first # Tianjin (天津)
+
+active_locations = region.locations.valid_at.alive
+active_towns     = region.towns.valid_at.alive
 ```
