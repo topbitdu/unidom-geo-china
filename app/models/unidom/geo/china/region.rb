@@ -26,6 +26,7 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
   self.table_name = 'unidom_china_regions'
 
   include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Geo::Concerns::AsRegion
 
   validates :numeric_code,    numericality: { integer_only: true }
   validates :alphabetic_code, allow_blank:  true, length: { minimum: 2 }
@@ -33,8 +34,8 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
 
   belongs_to :scheme, polymorphic: true
 
-  has_many :locations, class_name: 'Unidom::Geo::Location', as:     :region
-  has_many :locatings, through:    :locations,              source: :locatings
+  #has_many :locations, class_name: 'Unidom::Geo::Location', as:     :region
+  #has_many :locatings, through:    :locations,              source: :locatings
 
   has_many :towns, class_name: 'Unidom::Geo::China::Town'
 

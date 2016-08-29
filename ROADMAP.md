@@ -17,3 +17,6 @@
 
 ## v0.3.1
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
+
+## v0.3.2
+1. Improve the Region model to include the As Region concern
