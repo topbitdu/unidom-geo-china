@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unidom-geo-china (0.3.1)
+    unidom-geo-china (0.3.2)
       unidom-common (>= 1.0)
 
 GEM
@@ -105,7 +105,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unidom-common (1.0.1)
+    unidom-common (1.1)
       pg (~> 0)
       rails (>= 4.2)
     websocket-driver (0.6.4)
