@@ -50,3 +50,14 @@ Unidom::Geo::China::Region.numeric_coded_as('120000').valid_at.alive.first # Tia
 active_locations = region.locations.valid_at.alive
 active_towns     = region.towns.valid_at.alive
 ```
+
+The Region model has a lot of domain knowlegde of the China regions.
+- ```region.numeric_code_middle_empty?``` indicates whether the ```region``` is a province. 判断行政区划是否是一个省、直辖市、或者自治区。
+- ```!region.numeric_code_middle_empty?&&region.numeric_code_suffix_empty?``` indicates whether the ```region``` is a city. 判断行政区划是否是一个地级市、地区、自治州、盟。
+- ```!region..numeric_code_suffix_empty?``` indicates whether the ```region``` is a county. 判断行政区划是否是一个自治县、县级市、旗、自治旗、市辖区、林区、特区。
+- ```region.mducg?``` indicates whether the ```region``` is a municipality direct under central government. 判断行政区划是否是一个直辖市。
+- 
+```region.under_mducg?``` indicates whether the ```region``` is under any municipality direct under central government. 判断行政区划是否是一个直辖市的下级行政区划。
+- ```region.under? another_region``` indicates the ```region``` is under the given another_region. 判断行政区划是否是一个给定行政区划的下级（含直接和间接下级）。
+- ```region.super_regions``` returns a scope for the super regions of the ```region```. 返回找到 ```region``` 直接上级行政区划的查询 scope。
+- ```region.sub_regions``` returns a scope for the sub regions of the ```region```. 返回找到 ```region``` 直接下级行政区划的查询 scope。
