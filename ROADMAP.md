@@ -20,3 +20,8 @@
 
 ## v0.3.2
 1. Improve the Region model to include the As Region concern
+
+## v0.4
+1. As Inferior Region concern
+2. As Superior Region concern
+3. Improve the Region model to include the As Inferior Region concern & the As Superior Region concern
