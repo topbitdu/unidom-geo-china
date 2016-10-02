@@ -27,6 +27,8 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
 
   include Unidom::Common::Concerns::ModelExtension
   include Unidom::Geo::Concerns::AsRegion
+  include Unidom::Geo::China::Concerns::AsInferiorRegion
+  include Unidom::Geo::China::Concerns::AsSuperiorRegion
 
   validates :numeric_code,    numericality: { integer_only: true }
   validates :alphabetic_code, allow_blank:  true, length: { minimum: 2 }
@@ -77,6 +79,7 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
     under_mducg? && numeric_code_middle_empty? && numeric_code_suffix_empty?
   end
 
+=begin
   def super_regions
     numeric_code_suffix_empty? ? (numeric_code_middle_empty? ? self.class.none : self.class.numeric_coded_as("#{numeric_code_prefix}0000")) : self.class.numeric_coded_as("#{numeric_code_prefix}#{numeric_code_middle}00")
   end
@@ -91,6 +94,7 @@ class Unidom::Geo::China::Region < ActiveRecord::Base
       self.class.none
     end
   end
+=end
 
   def full_name(separator = ' ')
     final_name     = self.name
