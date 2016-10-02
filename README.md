@@ -61,3 +61,19 @@ The Region model has a lot of domain knowlegde of the China regions.
 - ```region.under? another_region``` indicates the ```region``` is under the given another_region. 判断行政区划是否是一个给定行政区划的下级（含直接和间接下级）。
 - ```region.super_regions``` returns a scope for the super regions of the ```region```. 返回找到 ```region``` 直接上级行政区划的查询 scope。
 - ```region.sub_regions``` returns a scope for the sub regions of the ```region```. 返回找到 ```region``` 直接下级行政区划的查询 scope。
+
+
+
+## Include the Concerns
+```ruby
+include Unidom::Geo::China::Concerns::AsInferiorRegion
+include Unidom::Geo::China::Concerns::AsSuperiorRegion
+```
+
+### As Inferior Region
+The As Inferior Region do the following tasks for the includer automatically:  
+1. Define the #super_regions method as: ``super_regions``
+
+### As Superior Region
+The As Superior Region do the following tasks for the includer automatically:  
+1. Define the #sub_regions method as: ``sub_regions``
