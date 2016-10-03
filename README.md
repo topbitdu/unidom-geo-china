@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
 [![Gem Version](https://badge.fury.io/rb/unidom-geo-china.svg)](https://badge.fury.io/rb/unidom-geo-china)
+[![Dependency Status](https://gemnasium.com/badges/github.com/topbitdu/unidom-geo-china.svg)](https://gemnasium.com/github.com/topbitdu/unidom-geo-china)
 
 Unidom (UNIfied Domain Object Model) is a series of domain model engines. The China Geo domain model engine includes the Region model and its migration.
 Unidom (统一领域对象模型)是一系列的领域模型引擎。中国地理领域模型引擎包括中国大陆的行政区划模型及其数据迁移脚本。
