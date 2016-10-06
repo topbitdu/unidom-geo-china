@@ -66,15 +66,18 @@ The Region model has a lot of domain knowlegde of the China regions.
 
 
 ## Include the Concerns
+
 ```ruby
 include Unidom::Geo::China::Concerns::AsInferiorRegion
 include Unidom::Geo::China::Concerns::AsSuperiorRegion
 ```
 
 ### As Inferior Region
+
 The As Inferior Region do the following tasks for the includer automatically:  
 1. Define the #super_regions method as: ``super_regions``
 
 ### As Superior Region
+
 The As Superior Region do the following tasks for the includer automatically:  
 1. Define the #sub_regions method as: ``sub_regions``
