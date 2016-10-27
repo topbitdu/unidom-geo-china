@@ -18,7 +18,7 @@
 #   省、自治区、直辖市、特别行政区的字母码用两位大写字母表示。
 #   市、地区、自治州、盟、县、自治县、县级市、旗、自治旗、市辖区、林区、特区的字母码用三位大写字母表示。
 
-class Unidom::Geo::China::Region < ActiveRecord::Base
+class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
 
   # MDUCG = MUNICIPALITY DIRECT UNDER CENTRAL GOVERNMENT
   MDUCG_CODES = [ '11', '12', '31', '50' ].freeze
