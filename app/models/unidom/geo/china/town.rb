@@ -1,6 +1,6 @@
 # Town 是乡或者镇。
 
-class Unidom::Geo::China::Town < ActiveRecord::Base
+class Unidom::Geo::China::Town < Unidom::Geo::China::ApplicationRecord
 
   self.table_name = 'unidom_china_towns'
 
