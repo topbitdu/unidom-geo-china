@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    unidom-geo-china (0.4.1)
-      unidom-common (>= 1.6)
+    unidom-geo-china (0.4.2)
+      unidom-common (>= 1.7)
 
 GEM
   remote: https://rubygems.org/
