@@ -19,7 +19,7 @@
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.0
 
 ## v0.3.2
-1. Improve the Region model to include the As Region concern
+1. Improved the Region model to include the As Region concern
 
 ## v0.4
 1. As Inferior Region concern
