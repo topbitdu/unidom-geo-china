@@ -1,7 +1,7 @@
 module Unidom
   module Geo
     module China
-      VERSION = '0.4.2'.freeze
+      VERSION = '0.4.3'.freeze
     end
   end
 end
