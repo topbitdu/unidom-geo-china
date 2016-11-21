@@ -31,3 +31,7 @@
 
 ## v0.4.2
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.7
+
+## v0.4.3
+1. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.2
+2. Improve the Ruby Gem Specification to never depend on [unidom-common](https://github.com/topbitdu/unidom-common)
