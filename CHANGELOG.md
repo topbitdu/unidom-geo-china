@@ -1,7 +1,7 @@
 # Unidom Geo China Change Log 中国地理领域模型引擎变更日志
 
 ## v0.1
-1. Region model & migration
+1. Region model & migration (20010491560010)
 2. Rake task unidom:geo:china:region:import
 
 ## v0.2
