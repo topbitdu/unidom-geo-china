@@ -12,7 +12,7 @@
 5. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.5
 
 ## v0.3
-1. Improve the Region model to add the has_many :locatings macro
+1. Improve the Region model to add the ``has_many :locatings`` macro
 2. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v0.9
 
 ## v0.3.1
