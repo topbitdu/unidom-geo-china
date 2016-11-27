@@ -24,7 +24,7 @@
 ## v0.4
 1. As Inferior Region concern
 2. As Superior Region concern
-3. Improve the Region model to include the As Inferior Region concern & the As Superior Region concern
+3. Improved the Region model to include the As Inferior Region concern & the As Superior Region concern
 
 ## v0.4.1
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
