@@ -5,7 +5,7 @@
 2. Rake task unidom:geo:china:region:import
 
 ## v0.2
-1. Town model & migration
+1. Town model & migration (20010491560020)
 2. Improved the Region model to add the ``has_many :towns`` association
 3. Renamed the unidom:geo:china:import Rake task to unidom:geo:china:region:import
 4. Implemented the unidom:geo:china:town:import Rake task
