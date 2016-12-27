@@ -1,4 +1,5 @@
-# Town 是乡或者镇。
+##
+# Town 是中国的乡或者镇。
 
 class Unidom::Geo::China::Town < Unidom::Geo::China::ApplicationRecord
 
