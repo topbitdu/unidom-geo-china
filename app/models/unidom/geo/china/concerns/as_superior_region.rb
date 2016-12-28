@@ -1,3 +1,6 @@
+##
+# As Superior Region 是上级行政区划的关注点。
+
 module Unidom::Geo::China::Concerns::AsSuperiorRegion
 
   extend ActiveSupport::Concern
