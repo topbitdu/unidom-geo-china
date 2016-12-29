@@ -1,3 +1,6 @@
+##
+# As Inferior Region 是下级行政区划的关注点。
+
 module Unidom::Geo::China::Concerns::AsInferiorRegion
 
   extend ActiveSupport::Concern
