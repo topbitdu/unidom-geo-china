@@ -38,3 +38,7 @@
 
 ## v0.4.4
 1. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.3
+
+## v0.4.5
+1. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.4
+2. Improve the Engine class to include the Engine Extension
