@@ -1,6 +1,8 @@
 # Unidom Geo China 中国地理领域模型引擎
 
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/unidom-geo-china/frames)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
+
 [![Gem Version](https://badge.fury.io/rb/unidom-geo-china.svg)](https://badge.fury.io/rb/unidom-geo-china)
 [![Dependency Status](https://gemnasium.com/badges/github.com/topbitdu/unidom-geo-china.svg)](https://gemnasium.com/github.com/topbitdu/unidom-geo-china)
 
@@ -57,7 +59,7 @@ The Region model has a lot of domain knowlegde of the China regions.
 - ```!region.numeric_code_middle_empty?&&region.numeric_code_suffix_empty?``` indicates whether the ```region``` is a city. 判断行政区划是否是一个地级市、地区、自治州、盟。
 - ```!region..numeric_code_suffix_empty?``` indicates whether the ```region``` is a county. 判断行政区划是否是一个自治县、县级市、旗、自治旗、市辖区、林区、特区。
 - ```region.mducg?``` indicates whether the ```region``` is a municipality direct under central government. 判断行政区划是否是一个直辖市。
-- 
+-
 ```region.under_mducg?``` indicates whether the ```region``` is under any municipality direct under central government. 判断行政区划是否是一个直辖市的下级行政区划。
 - ```region.under? another_region``` indicates the ```region``` is under the given another_region. 判断行政区划是否是一个给定行政区划的下级（含直接和间接下级）。
 - ```region.super_regions``` returns a scope for the super regions of the ```region```. 返回找到 ```region``` 直接上级行政区划的查询 scope。
@@ -74,10 +76,10 @@ include Unidom::Geo::China::Concerns::AsSuperiorRegion
 
 ### As Inferior Region
 
-The As Inferior Region do the following tasks for the includer automatically:  
+The As Inferior Region do the following tasks for the includer automatically:
 1. Define the #super_regions method as: ``super_regions``
 
 ### As Superior Region
 
-The As Superior Region do the following tasks for the includer automatically:  
+The As Superior Region do the following tasks for the includer automatically:
 1. Define the #sub_regions method as: ``sub_regions``
