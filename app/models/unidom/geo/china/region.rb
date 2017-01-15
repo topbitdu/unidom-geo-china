@@ -5,8 +5,8 @@
 #   省（自治区，直辖市，特别行政区）、
 #   市（地区，自治州，盟）、
 #   县（自治县、县级市、旗、自治旗、市辖区、林区、特区）。
-#   第1、2位数字：所在省份编码，表示省、自治区、直辖市、特别行政区。 
-#   第3、4位数字：所在省级市（县）编码，表示市、地区、自治州、盟、直辖市所辖市辖区、县汇总码、省（自治区）直辖县级行政区划汇总码。 
+#   第1、2位数字：所在省份编码，表示省、自治区、直辖市、特别行政区。
+#   第3、4位数字：所在省级市（县）编码，表示市、地区、自治州、盟、直辖市所辖市辖区、县汇总码、省（自治区）直辖县级行政区划汇总码。
 #     01~20、51~70表示市，直辖市则01表示市区，02以后表示直辖市辖区内的郊县；
 #     21~50表示地区、自治州、盟；
 #     90表示省（自治区）直辖县级行政区划汇总码。
@@ -79,23 +79,6 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
   def mducg?
     under_mducg? && numeric_code_middle_empty? && numeric_code_suffix_empty?
   end
-
-=begin
-  def super_regions
-    numeric_code_suffix_empty? ? (numeric_code_middle_empty? ? self.class.none : self.class.numeric_coded_as("#{numeric_code_prefix}0000")) : self.class.numeric_coded_as("#{numeric_code_prefix}#{numeric_code_middle}00")
-  end
-
-  def sub_regions
-    if numeric_code_suffix_empty?
-      prefix  = numeric_code_middle_empty? ? numeric_code_prefix : "#{numeric_code_prefix}#{numeric_code_middle}"
-      regions = self.class.numeric_code_starting_with(prefix).not_numeric_coded_as(numeric_code)
-      regions = regions.numeric_code_ending_with('00') if numeric_code_middle_empty?
-      regions
-    else
-      self.class.none
-    end
-  end
-=end
 
   def full_name(separator = ' ')
     final_name     = self.name
