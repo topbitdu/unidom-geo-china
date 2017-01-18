@@ -48,6 +48,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
 
   scope :root_level, -> { numeric_code_ending_with '0000' }
 
+  ##
+  # 获取行政区划代码的前 2 位数字。
   def numeric_code_prefix
     numeric_code[0..1]
   end
