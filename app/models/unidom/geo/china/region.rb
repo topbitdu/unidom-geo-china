@@ -101,4 +101,4 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     numeric_code_suffix_empty? ? false : region.numeric_code_suffix_empty?
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Geo::China::Region'
