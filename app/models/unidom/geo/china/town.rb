@@ -13,4 +13,4 @@ class Unidom::Geo::China::Town < Unidom::Geo::China::ApplicationRecord
 
   scope :region_is, ->(region) { where region_id: to_id(region) }
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Geo::China::Town'
