@@ -83,3 +83,19 @@ The As Inferior Region do the following tasks for the includer automatically:
 
 The As Superior Region do the following tasks for the includer automatically:
 1. Define the #sub_regions method as: ``sub_regions``
+
+
+
+## Disable the Model & Migration
+
+If you only need the app components other than models, the migrations should be neglected, and the models should not be loaded.
+```ruby
+# config/initializers/unidom.rb
+Unidom::Common.configure do |options|
+
+  options[:neglected_namespaces] = %w{
+    Unidom::Geo::China
+  }
+
+end
+```
