@@ -46,3 +46,8 @@
 ## v0.4.6
 1. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.5
 2. Improve the models to support the namespace neglecting
+
+## v0.5
+1. Models RSpec examples manifest
+2. Types RSpec examples manifest
+3. Validators RSpec examples manifest
