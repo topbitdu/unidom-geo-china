@@ -99,3 +99,18 @@ Unidom::Common.configure do |options|
 
 end
 ```
+
+
+
+## RSpec examples
+
+```ruby
+# spec/models/unidom_spec.rb
+require 'unidom/geo/china/models_rspec'
+
+# spec/types/unidom_spec.rb
+require 'unidom/geo/china/types_rspec'
+
+# spec/validators/unidom_spec.rb
+require 'unidom/geo/china/validators_rspec'
+```
