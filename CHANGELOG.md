@@ -44,7 +44,7 @@
 2. Improved the Engine class to include the Engine Extension concern
 
 ## v0.4.6
-1. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.5
+1. Improved the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.4.5
 2. Improve the models to support the namespace neglecting
 
 ## v0.5
