@@ -31,9 +31,9 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
   include Unidom::Geo::China::Concerns::AsInferiorRegion
   include Unidom::Geo::China::Concerns::AsSuperiorRegion
 
-  validates :numeric_code,    numericality: { integer_only: true }
+  validates :numeric_code,    presence:     true, numericality: { integer_only: true, greater_than_or_equal_to: 0 }, length: { minimum: columns_hash['numeric_code'].limit }
   validates :alphabetic_code, allow_blank:  true, length: { minimum: 2 }
-  validates :name,            presence:     true, length: { maximum: self.columns_hash['name'].limit }
+  validates :name,            presence:     true, length: { in: 2..self.columns_hash['name'].limit }
 
   belongs_to :scheme, polymorphic: true
 
