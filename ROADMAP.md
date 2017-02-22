@@ -60,4 +60,5 @@
 
 ## v0.5.2
 1. Improve the Region model for the validations on the #name attribute
-3. Improve the Region spec for the validations on the #name attribute
+2. Improve the Region spec for the validations on the #name attribute
+3. Improve the unidom:geo:china:region:import task for the updating when importing
