@@ -69,6 +69,18 @@ describe Unidom::Geo::China::Region, type: :model do
       { name: '1'*(name_max_length+1) } => 1,
       { name: 'A'*(name_max_length+1) } => 1
 
+    town_1_attributes = {
+      numeric_code: '1'*9,
+      name:         'Some Town #1'
+    }
+
+    town_2_attributes = {
+      numeric_code: '2'*9,
+      name:         'Some Town #2'
+    }
+
+    it_behaves_like 'has_many', model_attributes, :towns, Unidom::Geo::China::Town, [ town_1_attributes, town_2_attributes ]
+
   end
 
 end
