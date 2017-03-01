@@ -53,6 +53,16 @@ describe Unidom::Geo::China::Town, type: :model do
       { name: '1'*(name_max_length+1) } => 1,
       { name: 'A'*(name_max_length+1) } => 1
 
+    region_attributes = {
+      scheme_id:        SecureRandom.uuid,
+      scheme_type:      'Unidom::Geo::China::Scheme::Mock',
+      numeric_code:     '999999',
+      alphabetic_code:  'ZZZ',
+      name:             'Some Region'
+    }
+
+    it_behaves_like 'belongs_to', model_attributes, :region, Unidom::Geo::China::Region, region_attributes
+
   end
 
 end
