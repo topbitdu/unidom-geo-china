@@ -62,3 +62,7 @@
 1. Improve the Region model for the validations on the #name attribute
 2. Improve the Region spec for the validations on the #name attribute
 3. Improve the unidom:geo:china:region:import task for the updating when importing
+
+## v0.5.3
+1. Improve the Region spec for the ``has_many :towns, class_name: 'Unidom::Geo::China::Town'`` macro
+2. Improve the Town spec for the ``belongs_to :region, class_name: 'Unidom::Geo::China::Region'`` macro
