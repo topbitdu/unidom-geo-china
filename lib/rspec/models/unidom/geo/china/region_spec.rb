@@ -81,6 +81,22 @@ describe Unidom::Geo::China::Region, type: :model do
 
     it_behaves_like 'has_many', model_attributes, :towns, Unidom::Geo::China::Town, [ town_1_attributes, town_2_attributes ]
 
+    it_behaves_like 'scope', :name_is, [
+      { attributes_collection: [ model_attributes                               ], count_diff: 1, args: [ model_attributes[:name] ] },
+      { attributes_collection: [ model_attributes                               ], count_diff: 0, args: [ 'Another Region'        ] },
+      { attributes_collection: [ model_attributes.merge(name: 'Another Region') ], count_diff: 0, args: [ model_attributes[:name] ] },
+      { attributes_collection: [ model_attributes.merge(name: 'Another Region') ], count_diff: 1, args: [ 'Another Region'        ] }
+    ]
+
+    it_behaves_like 'scope', :being_virtual, [
+      { attributes_collection: [ model_attributes                      ], count_diff: 0, args: [       ] },
+      { attributes_collection: [ model_attributes                      ], count_diff: 0, args: [ true  ] },
+      { attributes_collection: [ model_attributes                      ], count_diff: 1, args: [ false ] },
+      { attributes_collection: [ model_attributes.merge(virtual: true) ], count_diff: 1, args: [       ] },
+      { attributes_collection: [ model_attributes.merge(virtual: true) ], count_diff: 1, args: [ true  ] },
+      { attributes_collection: [ model_attributes.merge(virtual: true) ], count_diff: 0, args: [ false ] }
+    ]
+
   end
 
 end
