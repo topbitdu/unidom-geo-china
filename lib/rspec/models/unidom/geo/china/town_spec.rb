@@ -63,6 +63,8 @@ describe Unidom::Geo::China::Town, type: :model do
 
     it_behaves_like 'belongs_to', model_attributes, :region, Unidom::Geo::China::Region, region_attributes
 
+    it_behaves_like 'monomorphic scope', model_attributes, :region_is, :region
+
   end
 
 end
