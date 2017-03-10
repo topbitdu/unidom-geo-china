@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unidom-geo-china (0.5.3)
+    unidom-geo-china (0.5.4)
       unidom-geo (~> 1.4, >= 1.4.5)
 
 GEM
@@ -109,7 +109,7 @@ GEM
       pg (~> 0)
       progne_tapera (>= 0.4)
       rails (>= 4.2)
-    unidom-geo (1.5.3)
+    unidom-geo (1.5.4)
       unidom-common (~> 1.9)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
