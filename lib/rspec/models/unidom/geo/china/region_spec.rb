@@ -40,34 +40,10 @@ describe Unidom::Geo::China::Region, type: :model do
       { numeric_code: 1111111   } => 1,
       { numeric_code: '11111A'  } => 1
 
-    it_behaves_like 'validates', model_attributes, :alphabetic_code,
-      {                         } => 0,
-      { alphabetic_code: nil    } => 0,
-      { alphabetic_code: ''     } => 0,
-      { alphabetic_code: '1'    } => 1,
-      { alphabetic_code: '11'   } => 0,
-      { alphabetic_code: 'AA'   } => 0,
-      { alphabetic_code: '111'  } => 0,
-      { alphabetic_code: 'AAA'  } => 0,
-      { alphabetic_code: '1111' } => 1,
-      { alphabetic_code: 'AAAA' } => 1
-
-    it_behaves_like 'validates', model_attributes, :name,
-      {             } => 0,
-      { name: nil   } => 2,
-      { name: ''    } => 2,
-      { name: '1'   } => 0,
-      { name: 'A'   } => 0,
-      { name: '11'  } => 0,
-      { name: 'AA'  } => 0,
-      { name: '111' } => 0,
-      { name: 'AAA' } => 0,
-      { name: '1'*(name_max_length-1) } => 0,
-      { name: 'A'*(name_max_length-1) } => 0,
-      { name: '1'*name_max_length     } => 0,
-      { name: 'A'*name_max_length     } => 0,
-      { name: '1'*(name_max_length+1) } => 1,
-      { name: 'A'*(name_max_length+1) } => 1
+    it_behaves_like 'validates text', model_attributes, :alphabetic_code,
+      length: 2..described_class.columns_hash['alphabetic_code'].limit
+    it_behaves_like 'validates text', model_attributes, :name,
+      length: 1..described_class.columns_hash['name'].limit
 
     town_1_attributes = {
       numeric_code: '1'*9,
