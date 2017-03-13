@@ -14,8 +14,6 @@ describe Unidom::Geo::China::Town, type: :model do
       name:         'Some Town'
     }
 
-    name_max_length = described_class.columns_hash['name'].limit
-
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
     it_behaves_like 'validates', model_attributes, :numeric_code,
@@ -37,21 +35,8 @@ describe Unidom::Geo::China::Town, type: :model do
       { numeric_code: '111111.11'   } => 1,
       { numeric_code: 111111.11     } => 1
 
-    it_behaves_like 'validates', model_attributes, :name,
-      {              } => 0,
-      { name: nil    } => 2,
-      { name: ''     } => 2,
-      { name: '1'    } => 1,
-      { name: '11'   } => 0,
-      { name: 'AA'   } => 0,
-      { name: '111'  } => 0,
-      { name: 'AAA'  } => 0,
-      { name: '1'*(name_max_length-1) } => 0,
-      { name: 'A'*(name_max_length-1) } => 0,
-      { name: '1'*name_max_length     } => 0,
-      { name: 'A'*name_max_length     } => 0,
-      { name: '1'*(name_max_length+1) } => 1,
-      { name: 'A'*(name_max_length+1) } => 1
+    it_behaves_like 'validates text', model_attributes, :name,
+      length: 2..described_class.columns_hash['name'].limit
 
     region_attributes = {
       scheme_id:        SecureRandom.uuid,
