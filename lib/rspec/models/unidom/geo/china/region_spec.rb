@@ -19,6 +19,7 @@ describe Unidom::Geo::China::Region, type: :model do
     name_max_length = described_class.columns_hash['name'].limit
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
+    it_behaves_like 'Unidom::Geo::Concerns::AsRegion',          model_attributes
 
     it_behaves_like 'validates', model_attributes, :numeric_code,
       {                         } => 0,
