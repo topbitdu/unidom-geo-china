@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    unidom-geo-china (0.5.5)
-      unidom-geo (~> 1.4, >= 1.4.5)
+    unidom-geo-china (0.5.6)
+      unidom-geo (~> 1.5, >= 1.5.6)
 
 GEM
   remote: https://rubygems.org/
@@ -105,11 +105,11 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unidom-common (1.9.2)
+    unidom-common (1.9.1)
       pg (~> 0)
       progne_tapera (>= 0.4)
       rails (>= 4.2)
-    unidom-geo (1.5.5)
+    unidom-geo (1.5.6)
       unidom-common (~> 1.9)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
