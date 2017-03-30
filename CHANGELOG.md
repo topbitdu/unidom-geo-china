@@ -78,3 +78,7 @@
 ## v0.5.6
 1. Improve the Region spec for the As Region concern
 2. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.5.6
+
+## v0.5.7
+1. As Inferior Region shared examples
+2. Improve the Region spec for the As Inferior Region concern
