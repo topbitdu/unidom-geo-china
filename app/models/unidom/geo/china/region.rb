@@ -54,6 +54,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     numeric_code[0..1]
   end
 
+  ##
+  # 获取行政区划代码的中间 2 位数字。
   def numeric_code_middle
     numeric_code[2..3]
   end
