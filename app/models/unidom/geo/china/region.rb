@@ -60,6 +60,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     numeric_code[2..3]
   end
 
+  ##
+  # 获取行政区划代码的后 2 位数字。
   def numeric_code_suffix
     numeric_code[4..5]
   end
