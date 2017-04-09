@@ -8,7 +8,7 @@ class Unidom::Geo::China::Town < Unidom::Geo::China::ApplicationRecord
   include Unidom::Common::Concerns::ModelExtension
 
   validates :numeric_code, length: { minimum: self.columns_hash['numeric_code'].limit }, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :name,         presence: true, length: { in: 2..self.columns_hash['name'].limit      }
+  validates :name,         presence: true, length: { in: 2..self.columns_hash['name'].limit }
 
   belongs_to :region, class_name: 'Unidom::Geo::China::Region'
 
