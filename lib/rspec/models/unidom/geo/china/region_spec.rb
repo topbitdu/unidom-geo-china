@@ -8,6 +8,61 @@ describe Unidom::Geo::China::Region, type: :model do
   after :each do
   end
 
+  it 'should consider Beijing under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('110000').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Chaoyang under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('110105').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Tainjin under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('120000').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Nankai under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('120104').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Shanghai under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('310000').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Xuhui under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('310104').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Chongqing under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('500000').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should consider Shapinba under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('500106').first_or_initialize
+    expect(region.under_mducg?).to be_truthy
+  end
+
+  it 'should not consider Sichuan under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('510000').first_or_initialize
+    expect(region.under_mducg?).to be_falsey
+  end
+
+  it 'should not consider Chengdu under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('510100').first_or_initialize
+    expect(region.under_mducg?).to be_falsey
+  end
+
+  it 'should not consider Jinniu under a municipality direct under central government' do
+    region = described_class.numeric_coded_as('510106').first_or_initialize
+    expect(region.under_mducg?).to be_falsey
+  end
+
   context do
 
     model_attributes = {
@@ -73,6 +128,15 @@ describe Unidom::Geo::China::Region, type: :model do
       { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, virtual: true) ], count_diff: 1, args: [       ] },
       { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, virtual: true) ], count_diff: 1, args: [ true  ] },
       { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, virtual: true) ], count_diff: 0, args: [ false ] }
+    ]
+
+    it_behaves_like 'scope', :root_level, [
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid                        ) ], count_diff: 0, args: [] },
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, numeric_code: '999900') ], count_diff: 0, args: [] },
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, numeric_code: '999000') ], count_diff: 0, args: [] },
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, numeric_code: '990000') ], count_diff: 1, args: [] },
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, numeric_code: '900000') ], count_diff: 1, args: [] },
+      { attributes_collection: [ model_attributes.merge(scheme_id: SecureRandom.uuid, numeric_code: '000000') ], count_diff: 1, args: [] }
     ]
 
   end
