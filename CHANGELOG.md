@@ -82,3 +82,6 @@
 ## v0.5.7
 1. As Inferior Region shared examples
 2. Improve the Region spec for the As Inferior Region concern
+
+## v0.5.8
+1. Improve the Region spec for the root_level scope, & the #under_mducg? method
