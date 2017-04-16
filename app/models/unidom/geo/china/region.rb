@@ -72,6 +72,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     '00'==numeric_code_middle
   end
 
+  ##
+  # 判断行政区划代码的后 2 位数字是否为 00 。
   def numeric_code_suffix_empty?
     '00'==numeric_code_suffix
   end
