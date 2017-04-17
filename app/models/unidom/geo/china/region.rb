@@ -78,6 +78,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     '00'==numeric_code_suffix
   end
 
+  ##
+  # 判断一个区县级的行政区划是否是区。
   def district?
     numeric_code_suffix.to_i<20
   end
