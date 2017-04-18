@@ -84,6 +84,8 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     numeric_code_suffix.to_i<20
   end
 
+  ##
+  # 判断一个行政区划是否是或者属于直辖市。
   def under_mducg?
     self.class::MDUCG_CODES.include? numeric_code_prefix
   end
