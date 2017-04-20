@@ -96,6 +96,11 @@ class Unidom::Geo::China::Region < Unidom::Geo::China::ApplicationRecord
     under_mducg? && numeric_code_middle_empty? && numeric_code_suffix_empty?
   end
 
+  ##
+  # 拼写当前行政区划的全称，用指定的分隔符区分。如：
+  # region.full_name
+  # # or
+  # region.full_name ' '
   def full_name(separator = ' ')
     final_name     = self.name
     current_region = self
