@@ -64,7 +64,7 @@
 3. Improved the unidom:geo:china:region:import task for the updating when importing
 
 ## v0.5.3
-1. Improve the Region spec for the ``has_many :towns, class_name: 'Unidom::Geo::China::Town'`` macro
+1. Improved the Region spec for the ``has_many :towns, class_name: 'Unidom::Geo::China::Town'`` macro
 2. Improve the Town spec for the ``belongs_to :region, class_name: 'Unidom::Geo::China::Region'`` macro
 
 ## v0.5.4
