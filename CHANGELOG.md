@@ -72,7 +72,7 @@
 2. Improved the Town spec for the region_is scope
 
 ## v0.5.5
-1. Improve the Region spec for the validations on the #alphabetic_code attribute, & the #name attribute
+1. Improved the Region spec for the validations on the #alphabetic_code attribute, & the #name attribute
 2. Improve the Town spec for the validations on the #name attribute
 
 ## v0.5.6
