@@ -76,7 +76,7 @@
 2. Improved the Town spec for the validations on the #name attribute
 
 ## v0.5.6
-1. Improve the Region spec for the As Region concern
+1. Improved the Region spec for the As Region concern
 2. Improve the Ruby Gem Specification to depend on [unidom-geo](https://github.com/topbitdu/unidom-geo) v1.5.6
 
 ## v0.5.7
