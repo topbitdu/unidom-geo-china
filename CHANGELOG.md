@@ -53,7 +53,7 @@
 3. Validators RSpec examples manifest
 
 ## v0.5.1
-1. Improved the Region model for the validations on the #``numeric_code`` attribute & the #name attribute
+1. Improved the Region model for the validations on the #``numeric_code`` attribute & the #``name`` attribute
 2. Improved the Town model for the validations on the #numeric_code attribute & the #name attribute
 3. Improved the Region spec for the validations on the #numeric_code attribute, the #alphabetic_code attribute, & the #name attribute
 4. Improved the Town spec for the validations on the #name attribute, & the #numeric_code attribute
