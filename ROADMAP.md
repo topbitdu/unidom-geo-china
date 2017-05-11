@@ -85,3 +85,7 @@
 
 ## v0.5.8
 1. Improve the Region spec for the root_level scope, & the #under_mducg? method
+
+## v0.5.9
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
+2. Improve the China Region migration, & the China Town migration for the #opened_at column, & the #closed_at column
