@@ -19,6 +19,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = [ 'lib' ]
 
-  spec.add_dependency 'unidom-geo', '~> 1.5', '>= 1.5.6'
+  spec.add_dependency 'unidom-geo', '~> 1.5', '>= 1.5.10'
 
 end
